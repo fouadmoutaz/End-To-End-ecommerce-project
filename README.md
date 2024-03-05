@@ -44,7 +44,7 @@ Staging Model:
 
 Alteryx Workflow:
 
-![Staging Workflow](2.%20Staging%20layer/full_statging_workflow.png)
+![Staging Workflow](etl_alteryx.png)
 
 ## [3. Data Warehouse](./3.%20DataWarehouse%20Design/README.md)
 
