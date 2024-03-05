@@ -40,7 +40,7 @@ Data Source:
 
 Staging Model:
 
-![Stating Model](2.%20Staging%20layer/Statging_model.png)
+![Stating Model](stage_model.png)
 
 Alteryx Workflow:
 
