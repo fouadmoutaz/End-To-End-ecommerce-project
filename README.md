@@ -53,33 +53,6 @@ Data Warehouse Model:
 ![Data Warehouse](3.%20DataWarehouse%20Design/Model.png)
 
 
-## [4. Analysis using SQL](./4.%20Analysis%20The%20Data/README.md)
-
-Example of the analysis:
-Question: 
-
-Which Logistic Route Has Heavy Traffic In Our E-Commerce? (Delay Frequency)
-
-```sql
-SELECT TOP 10 CONCAT(Sellers.SellerState, ', ', Sellers.SellerCity,' ==>> ', Users.UserState, ', ', Users.UserCity) 'Logistic Route', AVG(SubQuery.MaxDeliveryDelayDays) / 
-           COUNT(DISTINCT(OrderItems.OrderID)) AS 'Average Delivery Days Per Order'
-FROM (
-    SELECT OrderItems.OrderID, MAX(OrderItems.DeliveryDelayDays*1.0) AS MaxDeliveryDelayDays
-    FROM OrderItems
-	WHERE OrderItems.DeliveryDelayCheck = 'Delayed'
-    GROUP BY OrderItems.OrderID
-) AS SubQuery
-JOIN OrderItems ON SubQuery.OrderID = OrderItems.OrderID
-JOIN Users
-ON Users.UserID = OrderItems.UserID
-JOIN Sellers
-ON Sellers.SellerID = OrderItems.SellerID
-WHERE OrderItems.DeliveryDelayCheck = 'Delayed'
-GROUP BY Sellers.SellerState, Sellers.SellerCity, Users.UserState, Users.UserCity
-ORDER BY 'Average Delivery Days Per Order' DESC;
-```
-
-## [5. Final Insights](./5.%20Final%20Insights/README.md)
 
 Main KPIs:
 
