@@ -34,7 +34,7 @@ Experience the synergy of SQL Server and Power BI as We leverage queries to unco
 
 Data Source:
 
-![Data Source](1.%20Source%20Data/Screenshot 2024-02-28 234759.png)
+![Data Source](Screenshot 2024-02-28 234759.png)
 
 ## [2. Staging layer](./2.%20Staging%20layer/README.md)
 
