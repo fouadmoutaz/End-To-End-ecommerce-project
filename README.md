@@ -56,7 +56,7 @@ Data Warehouse Model:
 
 Main KPIs:
 
-![Main KPIs](![image](https://github.com/fouadmoutaz/End-To-End-ecommerce-project/assets/77168593/c665547e-74fe-4abd-a9f7-630b80a9037f)
+![Main KPIs](KPI.png)
 )
 
 Location KPIs:
