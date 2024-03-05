@@ -34,7 +34,7 @@ Experience the synergy of SQL Server and Power BI as We leverage queries to unco
 
 Data Source:
 
-![Data Source](Screenshot 2024-02-28 234759.png)
+![Data Source]([Screenshot 2024-02-28 234759.png](https://github.com/fouadmoutaz/End-To-End-ecommerce-project/blob/master/Screenshot%202024-02-28%20234759.png))
 
 ## [2. Staging layer](./2.%20Staging%20layer/README.md)
 
