@@ -1,0 +1,376 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2023.2" RunE2="T">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="66" y="90" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">C:\Users\Lenovo\Desktop\projects\ecommerce project\source data\order_dataset.csv</File>
+          <FormatSpecificOptions>
+            <HeaderRow>True</HeaderRow>
+            <IgnoreErrors>False</IgnoreErrors>
+            <AllowShareWrite>False</AllowShareWrite>
+            <ImportLine>1</ImportLine>
+            <FieldLen>254</FieldLen>
+            <SingleThreadRead>False</SingleThreadRead>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <Delimeter>,</Delimeter>
+            <QuoteRecordBreak>False</QuoteRecordBreak>
+            <CodePage>28591</CodePage>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>order_dataset.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="order_id" size="254" source="File: C:\Users\Lenovo\Desktop\projects\ecommerce project\source data\order_dataset.csv" type="V_String" />
+            <Field name="user_name" size="254" source="File: C:\Users\Lenovo\Desktop\projects\ecommerce project\source data\order_dataset.csv" type="V_String" />
+            <Field name="order_status" size="254" source="File: C:\Users\Lenovo\Desktop\projects\ecommerce project\source data\order_dataset.csv" type="V_String" />
+            <Field name="order_date" size="254" source="File: C:\Users\Lenovo\Desktop\projects\ecommerce project\source data\order_dataset.csv" type="V_String" />
+            <Field name="order_approved_date" size="254" source="File: C:\Users\Lenovo\Desktop\projects\ecommerce project\source data\order_dataset.csv" type="V_String" />
+            <Field name="pickup_date" size="254" source="File: C:\Users\Lenovo\Desktop\projects\ecommerce project\source data\order_dataset.csv" type="V_String" />
+            <Field name="delivered_date" size="254" source="File: C:\Users\Lenovo\Desktop\projects\ecommerce project\source data\order_dataset.csv" type="V_String" />
+            <Field name="estimated_time_delivery" size="254" source="File: C:\Users\Lenovo\Desktop\projects\ecommerce project\source data\order_dataset.csv" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="186" y="42" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\Lenovo\AppData\Local\Temp\Engine_1076_008e3140f94f534f829675f894122ac8_\Engine_1076_fb476cfb5a69b643aa55fd52d1affd2c~.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Unique.Unique">
+        <Position x="186" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UniqueFields>
+            <Field field="order_id" />
+          </UniqueFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnique" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="294" y="90" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="order_id" selected="True" />
+            <SelectField field="order_status" selected="True" />
+            <SelectField field="order_date" selected="True" />
+            <SelectField field="order_approved_date" selected="True" />
+            <SelectField field="pickup_date" selected="True" />
+            <SelectField field="delivered_date" selected="True" />
+            <SelectField field="estimated_time_delivery" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="402" y="90" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="DateTimeParse([order_date],&quot;%m/%d/%Y %H:%M&quot;)" field="order_date_2" size="19" type="DateTime" />
+            <FormulaField expression="DateTimeParse([order_approved_date],&quot;%m/%d/%Y %H:%M&quot;)" field="order_approved_date_2" size="19" type="DateTime" />
+            <FormulaField expression="DateTimeParse([pickup_date],&quot;%m/%d/%Y %H:%M&quot;)" field="pickup_date_2" size="19" type="DateTime" />
+            <FormulaField expression="DateTimeParse([delivered_date],&quot;%m/%d/%Y %H:%M&quot;)" field="delivered_date_2" size="19" type="DateTime" />
+            <FormulaField expression="DateTimeParse([estimated_time_delivery],&quot;%m/%d/%Y %H:%M&quot;)" field="estimated_time_delivery_2" size="19" type="DateTime" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>order_date_2 = DateTimeParse([order_date],"%m/%d/%Y %H:%M")
+order_approved_date_...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="630" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="order_id" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="order_id" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_order_id" selected="True" input="Left_" />
+                <SelectField field="Left_order_status" selected="True" input="Left_" />
+                <SelectField field="Left_order_date_2" selected="True" input="Left_" />
+                <SelectField field="Left_order_approved_date_2" selected="True" input="Left_" />
+                <SelectField field="Left_pickup_date_2" selected="True" input="Left_" />
+                <SelectField field="Left_delivered_date_2" selected="True" input="Left_" />
+                <SelectField field="Left_estimated_time_delivery_2" selected="True" input="Left_" />
+                <SelectField field="Right_order_id" selected="False" rename="Right_order_id" input="Right_" />
+                <SelectField field="Right_order_status" selected="False" rename="Right_order_status" input="Right_" />
+                <SelectField field="Right_order_date" selected="False" rename="Right_order_date" input="Right_" />
+                <SelectField field="Right_order_approved_date" selected="False" rename="Right_order_approved_date" input="Right_" />
+                <SelectField field="Right_pickup_date" selected="False" rename="Right_pickup_date" input="Right_" />
+                <SelectField field="Right_delivered_date" selected="False" rename="Right_delivered_date" input="Right_" />
+                <SelectField field="Right_estimated_time_delivery" selected="False" rename="Right_estimated_time_delivery" input="Right_" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="498" y="234" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" FileFormat="18">odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=e-commerce;Data Source=DESKTOP-HLV4EPB\SQLEXPRESS;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=DESKTOP-HLV4EPB;Use Encryption for Data=False;Tag with column collation when possible=False|||dbo."order_track"</File>
+          <FormatSpecificOptions>
+            <PreSQL />
+            <PreSQLOnConfig>True</PreSQLOnConfig>
+            <NoProgress>False</NoProgress>
+            <CacheData>False</CacheData>
+            <TableStyle>Quoted</TableStyle>
+            <ReadUncommitted>False</ReadUncommitted>
+            <PostSQL />
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Source=DESKTOP-HLV4EPB\SQLEXPRESS
+Catalog=e-commerce
+Query=dbo."order_track"</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="order_id" size="254" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=e-commerce;Data Source=DESKTOP-HLV4EPB\SQLEXPRESS;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=DESKTOP-HLV4EPB;Use Encryption for Data=False;Tag with column collation when possible=False|||dbo.&quot;order_track&quot;" type="V_String" />
+            <Field name="order_status" size="254" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=e-commerce;Data Source=DESKTOP-HLV4EPB\SQLEXPRESS;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=DESKTOP-HLV4EPB;Use Encryption for Data=False;Tag with column collation when possible=False|||dbo.&quot;order_track&quot;" type="V_String" />
+            <Field name="order_date" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=e-commerce;Data Source=DESKTOP-HLV4EPB\SQLEXPRESS;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=DESKTOP-HLV4EPB;Use Encryption for Data=False;Tag with column collation when possible=False|||dbo.&quot;order_track&quot;" type="DateTime" />
+            <Field name="order_approved_date" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=e-commerce;Data Source=DESKTOP-HLV4EPB\SQLEXPRESS;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=DESKTOP-HLV4EPB;Use Encryption for Data=False;Tag with column collation when possible=False|||dbo.&quot;order_track&quot;" type="DateTime" />
+            <Field name="pickup_date" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=e-commerce;Data Source=DESKTOP-HLV4EPB\SQLEXPRESS;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=DESKTOP-HLV4EPB;Use Encryption for Data=False;Tag with column collation when possible=False|||dbo.&quot;order_track&quot;" type="DateTime" />
+            <Field name="delivered_date" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=e-commerce;Data Source=DESKTOP-HLV4EPB\SQLEXPRESS;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=DESKTOP-HLV4EPB;Use Encryption for Data=False;Tag with column collation when possible=False|||dbo.&quot;order_track&quot;" type="DateTime" />
+            <Field name="estimated_time_delivery" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=e-commerce;Data Source=DESKTOP-HLV4EPB\SQLEXPRESS;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=DESKTOP-HLV4EPB;Use Encryption for Data=False;Tag with column collation when possible=False|||dbo.&quot;order_track&quot;" type="DateTime" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="522" y="90" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="order_id" selected="True" />
+            <SelectField field="order_status" selected="True" />
+            <SelectField field="order_date_2" selected="True" />
+            <SelectField field="order_approved_date_2" selected="True" />
+            <SelectField field="pickup_date_2" selected="True" />
+            <SelectField field="delivered_date_2" selected="True" />
+            <SelectField field="estimated_time_delivery_2" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="774" y="90" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="18">odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=e-commerce;Data Source=DESKTOP-HLV4EPB\SQLEXPRESS;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=DESKTOP-HLV4EPB;Use Encryption for Data=False;Tag with column collation when possible=False|||order_track</File>
+          <Passwords />
+          <Disable>False</Disable>
+          <FormatSpecificOptions>
+            <TransactionSize>0</TransactionSize>
+            <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
+            <PostSQL />
+            <TableStyle>Quoted</TableStyle>
+            <AppendMap>
+              <AppendMapping mode="Custom">
+                <Field Source="order_id" Dest="order_id" />
+                <Field Source="order_status" Dest="order_status" />
+                <Field Source="order_date_2" Dest="order_date" />
+                <Field Source="order_approved_date_2" Dest="order_approved_date" />
+                <Field Source="pickup_date_2" Dest="pickup_date" />
+                <Field Source="delivered_date_2" Dest="delivered_date" />
+                <Field Source="estimated_time_delivery_2" Dest="estimated_time_delivery" />
+              </AppendMapping>
+            </AppendMap>
+            <PreSQL />
+            <TransactionMessages>False</TransactionMessages>
+            <OutputOption>Delete</OutputOption>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Source=DESKTOP-HLV4EPB\SQLEXPRESS
+Catalog=e-commerce
+Query=order_track</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Unique" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Left" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="6" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Output" />
+      <Destination ToolID="6" Connection="Left" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <RunWithE2 value="True" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>order track etl</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="0323d6b5-4544-43c3-bd9c-94701c4f7230" />
+      <Telemetry>
+        <PreviousWorkflowId value="ecc20112-58f2-4160-9f6e-1bf047aa7cc2" />
+        <OriginWorkflowId value="ecc20112-58f2-4160-9f6e-1bf047aa7cc2" />
+      </Telemetry>
+      <PlatformWorkflowId value="" />
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

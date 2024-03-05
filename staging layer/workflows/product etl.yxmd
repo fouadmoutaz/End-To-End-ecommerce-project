@@ -1,0 +1,320 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2023.2" RunE2="T">
+  <Nodes>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="258" y="462" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">C:\Users\Lenovo\Desktop\projects\ecommerce project\source data\products_dataset.csv</File>
+          <FormatSpecificOptions>
+            <HeaderRow>True</HeaderRow>
+            <IgnoreErrors>False</IgnoreErrors>
+            <AllowShareWrite>False</AllowShareWrite>
+            <ImportLine>1</ImportLine>
+            <FieldLen>254</FieldLen>
+            <SingleThreadRead>False</SingleThreadRead>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <Delimeter>,</Delimeter>
+            <QuoteRecordBreak>False</QuoteRecordBreak>
+            <CodePage>28591</CodePage>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>products_dataset.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="product_id" size="254" source="File: C:\Users\Lenovo\Desktop\projects\ecommerce project\source data\products_dataset.csv" type="V_String" />
+            <Field name="product_category" size="254" source="File: C:\Users\Lenovo\Desktop\projects\ecommerce project\source data\products_dataset.csv" type="V_String" />
+            <Field name="product_name_lenght" size="254" source="File: C:\Users\Lenovo\Desktop\projects\ecommerce project\source data\products_dataset.csv" type="V_String" />
+            <Field name="product_description_lenght" size="254" source="File: C:\Users\Lenovo\Desktop\projects\ecommerce project\source data\products_dataset.csv" type="V_String" />
+            <Field name="product_photos_qty" size="254" source="File: C:\Users\Lenovo\Desktop\projects\ecommerce project\source data\products_dataset.csv" type="V_String" />
+            <Field name="product_weight_g" size="254" source="File: C:\Users\Lenovo\Desktop\projects\ecommerce project\source data\products_dataset.csv" type="V_String" />
+            <Field name="product_length_cm" size="254" source="File: C:\Users\Lenovo\Desktop\projects\ecommerce project\source data\products_dataset.csv" type="V_String" />
+            <Field name="product_height_cm" size="254" source="File: C:\Users\Lenovo\Desktop\projects\ecommerce project\source data\products_dataset.csv" type="V_String" />
+            <Field name="product_width_cm" size="254" source="File: C:\Users\Lenovo\Desktop\projects\ecommerce project\source data\products_dataset.csv" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="354" y="462" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\Lenovo\AppData\Local\Temp\Engine_12948_019237e33c78bc49be1c49139d7cef18_\Engine_12948_024207663e1b274d802e7db6704f196e~.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Unique.Unique">
+        <Position x="318" y="534" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UniqueFields>
+            <Field field="product_id" />
+          </UniqueFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnique" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="414" y="510" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="product_id" selected="True" />
+            <SelectField field="product_category" selected="True" />
+            <SelectField field="product_name_lenght" selected="True" type="Int32" size="4" />
+            <SelectField field="product_description_lenght" selected="True" type="Int32" size="4" />
+            <SelectField field="product_photos_qty" selected="True" type="Int32" size="4" />
+            <SelectField field="product_weight_g" selected="True" type="Int32" size="4" />
+            <SelectField field="product_length_cm" selected="True" type="Int32" size="4" />
+            <SelectField field="product_height_cm" selected="True" type="Int32" size="4" />
+            <SelectField field="product_width_cm" selected="True" type="Int32" size="4" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="426" y="618" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" FileFormat="18">odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=e-commerce;Data Source=DESKTOP-HLV4EPB\SQLEXPRESS;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=DESKTOP-HLV4EPB;Use Encryption for Data=False;Tag with column collation when possible=False|||dbo."product"</File>
+          <FormatSpecificOptions>
+            <PreSQL />
+            <PreSQLOnConfig>True</PreSQLOnConfig>
+            <NoProgress>True</NoProgress>
+            <CacheData>False</CacheData>
+            <TableStyle>Quoted</TableStyle>
+            <ReadUncommitted>False</ReadUncommitted>
+            <PostSQL />
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Source=DESKTOP-HLV4EPB\SQLEXPRESS
+Catalog=e-commerce
+Query=dbo."product"</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="product_id" size="254" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=e-commerce;Data Source=DESKTOP-HLV4EPB\SQLEXPRESS;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=DESKTOP-HLV4EPB;Use Encryption for Data=False;Tag with column collation when possible=False|||dbo.&quot;product&quot;" type="V_String" />
+            <Field name="product_category" size="254" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=e-commerce;Data Source=DESKTOP-HLV4EPB\SQLEXPRESS;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=DESKTOP-HLV4EPB;Use Encryption for Data=False;Tag with column collation when possible=False|||dbo.&quot;product&quot;" type="V_String" />
+            <Field name="product_name_lenght" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=e-commerce;Data Source=DESKTOP-HLV4EPB\SQLEXPRESS;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=DESKTOP-HLV4EPB;Use Encryption for Data=False;Tag with column collation when possible=False|||dbo.&quot;product&quot;" type="Int32" />
+            <Field name="product_description_lenght" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=e-commerce;Data Source=DESKTOP-HLV4EPB\SQLEXPRESS;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=DESKTOP-HLV4EPB;Use Encryption for Data=False;Tag with column collation when possible=False|||dbo.&quot;product&quot;" type="Int32" />
+            <Field name="product_photos_qty" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=e-commerce;Data Source=DESKTOP-HLV4EPB\SQLEXPRESS;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=DESKTOP-HLV4EPB;Use Encryption for Data=False;Tag with column collation when possible=False|||dbo.&quot;product&quot;" type="Int32" />
+            <Field name="product_weight_g" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=e-commerce;Data Source=DESKTOP-HLV4EPB\SQLEXPRESS;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=DESKTOP-HLV4EPB;Use Encryption for Data=False;Tag with column collation when possible=False|||dbo.&quot;product&quot;" type="Int32" />
+            <Field name="product_length_cm" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=e-commerce;Data Source=DESKTOP-HLV4EPB\SQLEXPRESS;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=DESKTOP-HLV4EPB;Use Encryption for Data=False;Tag with column collation when possible=False|||dbo.&quot;product&quot;" type="Int32" />
+            <Field name="product_height_cm" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=e-commerce;Data Source=DESKTOP-HLV4EPB\SQLEXPRESS;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=DESKTOP-HLV4EPB;Use Encryption for Data=False;Tag with column collation when possible=False|||dbo.&quot;product&quot;" type="Int32" />
+            <Field name="product_width_cm" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=e-commerce;Data Source=DESKTOP-HLV4EPB\SQLEXPRESS;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=DESKTOP-HLV4EPB;Use Encryption for Data=False;Tag with column collation when possible=False|||dbo.&quot;product&quot;" type="Int32" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="14">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="570" y="534" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="product_id" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="product_id" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_product_id" selected="True" rename="Right_product_id" input="Right_" />
+                <SelectField field="Right_product_category" selected="True" rename="Right_product_category" input="Right_" />
+                <SelectField field="Right_product_name_lenght" selected="True" rename="Right_product_name_lenght" input="Right_" />
+                <SelectField field="Right_product_description_lenght" selected="True" rename="Right_product_description_lenght" input="Right_" />
+                <SelectField field="Right_product_photos_qty" selected="True" rename="Right_product_photos_qty" input="Right_" />
+                <SelectField field="Right_product_weight_g" selected="True" rename="Right_product_weight_g" input="Right_" />
+                <SelectField field="Right_product_length_cm" selected="True" rename="Right_product_length_cm" input="Right_" />
+                <SelectField field="Right_product_height_cm" selected="True" rename="Right_product_height_cm" input="Right_" />
+                <SelectField field="Right_product_width_cm" selected="True" rename="Right_product_width_cm" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="15">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="666" y="510" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="18">odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=e-commerce;Data Source=DESKTOP-HLV4EPB\SQLEXPRESS;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=DESKTOP-HLV4EPB;Use Encryption for Data=False;Tag with column collation when possible=False|||product</File>
+          <Passwords />
+          <Disable>False</Disable>
+          <FormatSpecificOptions>
+            <TransactionSize>10000</TransactionSize>
+            <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
+            <PostSQL />
+            <TableStyle>Quoted</TableStyle>
+            <AppendMap>
+              <AppendMapping mode="Custom">
+                <Field Source="product_id" Dest="product_id" />
+                <Field Source="product_category" Dest="product_category" />
+                <Field Source="product_name_lenght" Dest="product_name_lenght" />
+                <Field Source="product_description_lenght" Dest="product_description_lenght" />
+                <Field Source="product_photos_qty" Dest="product_photos_qty" />
+                <Field Source="product_weight_g" Dest="product_weight_g" />
+                <Field Source="product_length_cm" Dest="product_length_cm" />
+                <Field Source="product_height_cm" Dest="product_height_cm" />
+                <Field Source="product_width_cm" Dest="product_width_cm" />
+              </AppendMapping>
+            </AppendMap>
+            <PreSQL />
+            <TransactionMessages>False</TransactionMessages>
+            <OutputOption>Delete</OutputOption>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Source=DESKTOP-HLV4EPB\SQLEXPRESS
+Catalog=e-commerce
+Query=product</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="8" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Output" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Unique" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="Output" />
+      <Destination ToolID="14" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="14" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="Left" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <RunWithE2 value="True" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>product etl</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="24f0ed7f-2f14-4ff0-8d84-8f75a0c454f3" />
+      <Telemetry>
+        <PreviousWorkflowId value="41af23e0-5236-4145-9d44-8c9aef94e2fa" />
+        <OriginWorkflowId value="41af23e0-5236-4145-9d44-8c9aef94e2fa" />
+      </Telemetry>
+      <PlatformWorkflowId value="" />
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
