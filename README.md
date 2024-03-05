@@ -50,17 +50,18 @@ Alteryx Workflow:
 
 Data Warehouse Model:
 
-![Data Warehouse](3.%20DataWarehouse%20Design/Model.png)
+![Data Warehouse](dw_model.png)
 
 
 
 Main KPIs:
 
-![Main KPIs](5.%20Final%20Insights/Main_KPIs.png)
+![Main KPIs](![image](https://github.com/fouadmoutaz/End-To-End-ecommerce-project/assets/77168593/c665547e-74fe-4abd-a9f7-630b80a9037f)
+)
 
 Location KPIs:
 
-![Location KPIs](5.%20Final%20Insights/Location_KPIs.png)
+![Location KPIs](map.png)
 
 ## Project Presentation
 
